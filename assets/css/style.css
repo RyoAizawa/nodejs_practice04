@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/*-------------------------
+    初期値
+-------------------------*/
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+    font-size: 1.6rem;
+    text-size-adjust: 100%;
+    /* line-height: 2; */
+    font-feature-settings: "palt";
+}
+
+header {
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+}
+
+main {
+    max-width: 900px;
+    padding: 0 20px;
+    margin: 50px auto;
+}
+
+table {
+    border-collapse: collapse;
+    /* table-layout: auto; */
+    width: 100%;
+}
+
+tr {
+    border-top: 1px solid #ccc;
+}
+
+tr:nth-of-type(odd) {
+    background-color: #fbfbfb;
+}
+
+th {
+    width: 30%;
+    font-weight: normal;
+}
+td {
+    width: 70%;
+}
+
+th,
+td {
+    vertical-align: top;
+    padding: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+label {
+    margin-right: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: calc(1.6em * 5);
+    line-height: 1.6;
+}
+
+table tr:last-child {
+    text-align: center;
+}
