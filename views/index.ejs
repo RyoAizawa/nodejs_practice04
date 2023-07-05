@@ -1,75 +1,189 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせフォーム</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header>
-        <h1>お問い合わせフォーム</h1>
-    </header>
-    <main>
-        <form action="/" name="survey" method="post" novalidate>
-            <table>
-                <tr>
-                    <th>名前</th>
-                    <td><input type="text" name="name"><span id="nameError" class="error"></span></td>
-                </tr>
-                <tr>
-                    <th>ふりがな</th>
-                    <td><input type="text" name="kana_name"><span id="kana_nameError" class="error"></span>
-                </tr>
-                <tr>
-                    <th>性別</th>
-                    <td>
-                        <label><input type="radio" name="gender" value="男性">男性</label>
-                        <label><input type="radio" name="gender" value="女性">女性</label>
-                        <span id="genderError" class="error"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td><input type="text" name="email"><span id="emailError" class="error"></span></td>
-                </tr>
-                <tr>
-                    <th>お住いの住所</th>
-                    <td><input type="text" name="address"><span id="addressError" class="error"></span></td>
-                </tr>
-                <tr>
-                    <th>電話番号</th>
-                    <td><input type="text" name="phone"><span id="phoneError" class="error"></span></td>
-                </tr>
-                <tr>
-                    <th>当サイトを知った内容</th>
-                    <td>
-                        <p><label><input type="checkbox" name="where" value="広告で知った">広告で知った</label></p>
-                        <p><label><input type="checkbox" name="where" value="サイトを見た">サイトを見た</label></p>
-                        <p><label><input type="checkbox" name="where" value="知人から教えてもらった">知人から教えてもらった</label></p>
-                        <p><label><input type="checkbox" name="where" value="youtubeの広告を見た">youtubeの広告を見た</label></p>
-                        <!-- 何も選択しないときundefinedになるので空文字を送る -->
-                        <input type="hidden" name="where" value="">
-                    </td>
-                </tr>
-                <tr>
-                    <th>お問い合わせ内容</th>
-                    <td><textarea name="inquiry" id=""></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" id="submitBtn" value="送信"></td>
-                </tr>
-            </table>
-        </form>
-    </main>
-    <script>
-        document.getElementsByName("name")[0].addEventListener("change", () => {
-            
-        })
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>お問い合わせフォーム</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>お問い合わせフォーム</h1>
+        </header>
+        <main>
+            <form action="/" name="survey" method="post" novalidate>
+                <table>
+                    <tr>
+                        <th>名前<span class="required">必須</span></th>
+                        <td><input type="text" name="name"><span id="nameError" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <th>ふりがな<span class="required">必須</span></th>
+                        <td><input type="text" name="kana_name"><span id="kana_nameError" class="error"></span>
+                    </tr>
+                    <tr>
+                        <th>性別<span class="required">必須</span></th>
+                        <td>
+                            <label><input type="radio" name="gender" value="男性">男性</label>
+                            <label><input type="radio" name="gender" value="女性">女性</label>
+                            <span id="genderError" class="error"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email<span class="required">必須</span></th>
+                        <td><input type="text" name="email"><span id="emailError" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <th>お住いの住所<span class="required">必須</span></th>
+                        <td><input type="text" name="address"><span id="addressError" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <th>電話番号<span class="required">必須</span></th>
+                        <td><input type="text" name="phone"><span id="phoneError" class="error"></span></td>
+                    </tr>
+                    <tr>
+                        <th>当サイトを知った内容</th>
+                        <td>
+                            <p><label><input type="checkbox" name="where" value="広告で知った">広告で知った</label></p>
+                            <p><label><input type="checkbox" name="where" value="サイトを見た">サイトを見た</label></p>
+                            <p><label><input type="checkbox" name="where" value="知人から教えてもらった">知人から教えてもらった</label></p>
+                            <p><label><input type="checkbox" name="where" value="youtubeの広告を見た">youtubeの広告を見た</label></p>
+                            <!-- 何も選択しないときundefinedになるので空文字を送る -->
+                            <input type="hidden" name="where" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>お問い合わせ内容</th>
+                        <td><textarea name="inquiry" id=""></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" id="submitBtn" disabled value="送信"></td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+        <script>
+            const submitBtn = document.querySelector("#submitBtn");
 
-    </script>
-</body>
+            // 名前のバリデーションチェック
+            const name = document.getElementsByName("name")[0];
+            const nameError = document.querySelector("#nameError");
+            name.addEventListener("change", () => {
+                let error = false;
+                nameError.innerHTML = "";
+                const nameVal = /^[ぁ-ん一-龠a-zA-Z]+$/
+                // 名前入力がされていない、漢字、ひらがな、英字以外が入力されたらエラー
+                if (name.value === "" || !name.value.match(nameVal)) {
+                    nameError.innerHTML = "名前を入力してください"
+                    error = true;
+                };
+                checkAllValidate(error);
+            });
+
+            // かなのバリデーションチェック
+            const kana_name = document.getElementsByName("kana_name")[0];
+            const kana_nameError = document.querySelector("#kana_nameError");
+            kana_name.addEventListener("change", () => {
+                let error = false;
+                kana_nameError.innerHTML = "";
+                const kana_nameVal = /^[ぁ-ん]+$/
+                // かな入力がされていない、ひらがな以外が入力されたらエラー
+                if (kana_name.value === "" || !kana_name.value.match(kana_nameVal)) {
+                    kana_nameError.innerHTML = "ふりがなをひらがなで入力してください"
+                    error = true;
+                };
+                checkAllValidate(error);
+            });
+
+            // メールアドレスのバリデーションチェック
+            const email = document.getElementsByName("email")[0];
+            const emailError = document.querySelector("#emailError");
+            email.addEventListener("change", () => {
+                let error = false;
+                emailError.innerHTML = "";
+                // (半角英数で始まる)＋(半角英数と_と.は入力可)＋(@)＋(半角英数と_と.は入力可)＋(.を挟み1文字以上入力)
+                const emailVal = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/;
+                // メールアドレスが入力されていないか、メールの形式以外ではエラー
+                if (email.value === "" || !email.value.match(emailVal)) {
+                    emailError.innerHTML = "メールアドレスを入力してください。";
+                    error = true;
+                };
+                checkAllValidate(error)
+            });
+
+            // 住所のバリデーションチェック
+            const address = document.getElementsByName("address")[0];
+            const addressError = document.querySelector("#addressError");
+            address.addEventListener("change", () => {
+                let error = false;
+                addressError.innerHTML = "";
+                const addressVal = /^[ぁ-ん一-龠0-9]+$/
+                // メールアドレスが入力されていないか、メールの形式以外ではエラー
+                if (address.value === "" || !address.value.match(addressVal)) {
+                    addressError.innerHTML = "住所を入力してください。";
+                    error = true;
+                };
+                checkAllValidate(error);
+            });
+
+            // 電話番号のバリデーションチェック
+            const phone = document.getElementsByName("phone")[0];
+            const phoneError = document.querySelector("#phoneError");
+            phone.addEventListener("change", () => {
+                let error = false;
+                phoneError.innerHTML = "";
+                const phoneVal = /^[0-9\-]+$/;
+                // 番号が入力されていないか、ハイフンと数字以外入力でエラー
+                if (phone.value === "" || !phone.value.match(phoneVal)) {
+                    phoneError.innerHTML = "電話番号を入力してください。";
+                    error = true;
+                };
+                checkAllValidate(error);
+            });
+
+            // 性別のラジオボタンの入力チェック(選択された時点で選択済みなのでエラーはなし)
+            const gender = document.getElementsByName("gender");
+            const genderError = document.querySelector("#genderError");
+            gender.forEach((elem) => {
+                elem.addEventListener("change", () => {
+                    genderError.innerHTML = "";
+                    checkAllValidate(false);
+                })
+            })
+
+            function checkAllValidate(error) {
+                // エラーがある場合ボタンを無効化しreturn
+                if(error) {
+                    submitBtn.setAttribute("disabled", "true")
+                    return;
+                };
+                // ラジオボタンの入力チェック
+                let checked = false
+                if(gender.forEach((elem) => {
+                    if(elem.checked) checked = true;})
+                );
+                // 全て入力されていればボタンの無効化プロパティの削除
+                if(name.value !== "" && kana_name.value !== "" && email.value !== "" && address.value !== "" && phone.value !== "" && checked) {
+                    submitBtn.removeAttribute("disabled")
+                };
+            };
+
+            // 送信ボタンを押された際の動作
+            submitBtn.addEventListener("click", (event) => {
+                // ラジオボタンの入力チェック（すでにやってあるので不要？）
+                let checked = false
+                if(gender.forEach((elem) => {
+                    if(elem.checked) checked = true;})
+                );
+                // ラジオボタンが入力されていなければ
+                if(!checked) {
+                    genderError.innerHTML = "性別を選択してください。"
+                    event.preventDefault();
+                }
+            })
+        </script>
+    </body>
 </html>

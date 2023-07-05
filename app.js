@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+    // チェックボックスが何か選択されていれば、配列⇒文字列連結した形に変換する
     if (req.body["where"] !== "") {
         // 空文字はここで削除
         req.body["where"].splice(req.body["where"].indexOf(""), 1);
@@ -36,8 +37,7 @@ app.post("/", (req, res) => {
     const sql = "INSERT INTO survey SET ?";
     con.query(sql, req.body, function (err, result, fields) {
         if (err) throw err;
-        console.log(result);
-        res.redirect("/");
+        res.render("result");
     });
 });
 

@@ -4,7 +4,6 @@
 -------------------------*/
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth;
 }
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
@@ -16,6 +15,9 @@ body {
     font-feature-settings: "palt";
 }
 
+/*-------------------------
+    レイアウト
+-------------------------*/
 header {
     color: #fff;
     background-color: #333;
@@ -75,5 +77,25 @@ textarea {
 }
 
 table tr:last-child {
+    text-align: center;
+}
+
+.required {
+    font-size: 1.0rem;
+    color: #fff;
+    background-color: red;
+    padding: 3px;
+    margin-left: 7px;
+    border-radius: 3px;
+}
+
+
+.error {
+    color: red;
+    font-size: 1.4rem;
+}
+
+
+.thanks {
     text-align: center;
 }
